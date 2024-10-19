@@ -1,8 +1,8 @@
 # Rule-Engine-with-AST
 
 The Rule Engine AST (Abstract Syntax Tree) project is designed to provide a robust and extensible framework for creating and managing rules within applications. This engine parses rules written in a specific syntax and compiles them into an AST for further evaluation and execution. This README provides comprehensive details about building, setting up, and running the application.
-# path for code: src/main/java/sourceCode
-# path for unit tests: main/java/tests
+# path for code: Rule_Engine_With_AST/src/SourceCode
+# path for unit tests: Rule_Engine_With_AST/src/test
 
 Abstract Syntax Tree Representation: The engine converts rules into an AST for efficient evaluation.
 Modular Architecture: The project is designed for easy extensibility and maintainability.
