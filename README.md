@@ -17,7 +17,9 @@ Separation of Concerns: The application follows a 3-tier architecture, with the 
 Before building the application, ensure you have the following dependencies installed:
 
 Java: Version 11 or higher
+
 Maven: Version 3.6 or higher (for building the project)
+
 OracleSQL: Version 11g or higher 
 
 # Features
@@ -43,8 +45,11 @@ Backend: Database layer using Oracle Express Edition to store rules.
 Abstract Syntax Tree (AST) Design:
 
 Each rule is represented by an AST.
+
 Nodes in the AST are of two types:
+
 Operator Node: Represents logical operators like AND/OR.
+
 Operand Node: Represents conditions (e.g., age > 30).
 
 # Dependencies
@@ -64,12 +69,15 @@ The project uses Maven for dependency management and build automation. Ensure Ma
 4. JUnit 5 (Testing)
 
 For unit testing and test case automation, we use JUnit 5.
+
 JAR Dependencies:
 junit-jupiter-api
 junit-jupiter-engine
+
 5. Mockito (Testing)
 
 For mocking dependencies in unit tests.
+
 JAR Dependencies:
 mockito-core
 6. Oracle JDBC Driver
@@ -79,34 +87,52 @@ To connect Java with the Oracle database, download the Oracle JDBC driver.
 # Build and Setup Instructions
 
 1. Set Up the Oracle Database
+
 Run the Oracle 21c Express Edition Docker container as mentioned in the dependencies section.
 Once the Oracle database is running, create the necessary tables in the database for storing rules.
+
 CREATE TABLE RULES (
+
     RULE_ID NUMBER PRIMARY KEY,
+    
     RULE_NAME VARCHAR2(255),
+    
     RULE_STRING VARCHAR2(4000)
 );
-2. Configure Database Connection
+
+3. Configure Database Connection
+
 Update your RuleDatabase class to include the correct Oracle JDBC connection settings:
 
 java
 
 String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+
 String username = "your-username";
+
 String password = "your-password";
+
 3. Testing
+
 JUnit 5 tests are provided to ensure that rules are created, combined, and evaluated correctly. 
 
 4. Test Coverage
+
 Create Rule: Ensures that the AST is correctly created from a rule string.
+
 Combine Rules: Validates that multiple rules are combined efficiently into a single AST.
+
 Evaluate Rule: Tests if the rule evaluation works correctly with JSON data inputs.
 
 
 # Troubleshooting
+
 Common Issues
+
 Database Connection Error: Ensure Oracle is running and the JDBC URL is correct.
+
 NullPointerException during AST Evaluation: Make sure all nodes are properly initialized before rule evaluation.
+
 Tests Not Running: Check that JUnit 5 is properly set up in the pom.xml.
 
 
