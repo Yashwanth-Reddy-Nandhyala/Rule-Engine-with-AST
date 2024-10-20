@@ -8,7 +8,9 @@ The Rule Engine with AST (Abstract Syntax Tree) project is a 3-tier rule engine 
 The design of the rule engine revolves around using an Abstract Syntax Tree (AST) to represent logical conditions as rules. This approach allows flexible and dynamic rule evaluation, modification, and combination. Key design choices are:
 
 AST for Rule Representation: Rules are broken down into nodes (operators or operands), which makes it easy to create complex logical expressions.
+
 Dynamic Rule Modification: Rules can be dynamically created, modified, and combined using the AST structure.
+
 Separation of Concerns: The application follows a 3-tier architecture, with the front-end handling the user interface, the middle tier managing rule logic, and the backend handling data storage using a relational database.
 
 # Dependencies
@@ -20,17 +22,24 @@ OracleSQL: Version 11g or higher
 
 # Features
 Create Rule: Users can create a rule from a string and store it as an AST in the database.
+
 Combine Rules: Users can combine multiple rules into a single rule tree.
+
 Evaluate Rule: The system evaluates rules dynamically based on user attributes.
+
 JSON-Based Evaluation: JSON input is used to evaluate user attributes against rules.
+
 Database-Backed: Oracle 21c Express Edition is used to store and retrieve rules.
 
 # Architecture
 The system follows a 3-tier architecture:
 
 Frontend: Simple UI that takes rule input from the user.
+
 API Layer: Middle tier responsible for creating, combining, and evaluating rules.
+
 Backend: Database layer using Oracle Express Edition to store rules.
+
 Abstract Syntax Tree (AST) Design:
 
 Each rule is represented by an AST.
